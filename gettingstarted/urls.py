@@ -1,10 +1,9 @@
 from django.urls import path, include
-
 from django.contrib import admin
 
 admin.autodiscover()
 
-# import self-
+from self_storage_admin import urls
 
 # To add a new path, first import the app:
 # import blog
@@ -15,8 +14,6 @@ admin.autodiscover()
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
-    # path("", hello.views.index, name="index"),
-    # path("db/", hello.views.db, name="db"),
+    path('self_storage_admin/', include('self_storage_admin.urls')),
     path("admin/", admin.site.urls),
-    # path("self_storage_management/", include('self_storage_management.urls'))
 ]
